@@ -6,15 +6,15 @@ const Navlinks = () => {
       
     <ul className='sm:flex text-white gap-4 hidden'>
       <Link to="/">
-        <li>Home</li>
+        <li className='hover:text-green-300 duration-200'>Home</li>
       </Link>
 
       <Link to="/newpost">
-        <li>Post</li>
+        <li className='hover:text-green-300 duration-200'>Post</li>
       </Link>
 
       <Link to="/about">
-        <li>About</li>
+        <li className='hover:text-green-300 duration-200'>About</li>
       </Link>
     </ul>       
   )

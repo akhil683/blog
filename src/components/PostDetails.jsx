@@ -6,20 +6,16 @@ const PostDetails = ({ posts }) => {
   const { id } = useParams();
   const post = posts.find(post => post.id == id);
 
-  const handleDelete = (id) => {
-    
-  }
-
   return (
     <article className="p-2 max-w-2xl m-auto text-white">
       {post && 
         <>
-          <div className="relative w-full h-40 mb-4">
+          <div className="relative w-full h-48 mb-4">
 
-            <img src={post.thumbnail} alt="post.title" className="w-full h-40 object-cover"/>
+            <img src={post.thumbnail} alt="post.title" className="w-full h-48 object-cover"/>
 
-            <div className="bg-[#1e1e1e91] w-full h-40 p-2 absolute top-0">
-              <p className="text-gray-200 mb-2 text-sm">26 April, 2023</p>
+            <div className="bg-[#1e1e1e91] w-full h-48 p-2 absolute top-0">
+              <p className="text-gray-200 mb-2 text-sm">{post.datetime}</p>
               <h2 className="text-3xl">{post.title}</h2>
               <p className="text-xl absolute bottom-3 right-3 text-green-200">By {post.author}</p>
             </div>    
@@ -27,10 +23,6 @@ const PostDetails = ({ posts }) => {
           </div>
 
           <p className="text-xl text-justify text-black">{post.data}</p>
-
-          <button className="text-black" onClick={handleDelete(post.id)}>
-            Delete
-          </button>
 
           <div className="flex justify-between">
             <Link to={`/posts/${post.id - 1}`}>
